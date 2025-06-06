@@ -99,16 +99,16 @@ export default function Home() {
             Trusted by Brands Around the World
           </Text>
           <Grid className={styles.brandsGrid}>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Johnson & Johnson</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Datadog</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Stripe</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Samsung</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Instacart</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Perplexity</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Ramp</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Shopify</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">US Foods</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Mercado Libre</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">7RYMS</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">BOYA Audio</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">FOINE Essence</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">ELNARIS Fragrance</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">GAMBRINO</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">LINKIT Asia</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">NOMADICO</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">PACETE Clinic</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">ROMOSS</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">WALLEX</Text>
           </Grid>
         </Column>
       </Column>

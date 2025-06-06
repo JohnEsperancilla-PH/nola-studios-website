@@ -76,100 +76,35 @@ const about = {
   title: "About – NOLA Studios",
   description: "Learn about NOLA Studios, your partner in creative marketing and brand development",
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com/nolastudios",
+    display: false,
+    link: "",
   },
   intro: {
-    display: true,
+    display: false,
     title: "Introduction",
-    description: (
-      <>
-        NOLA Studios is a creative marketing agency that specializes in transforming brands through 
-        strategic digital marketing, compelling content creation, and innovative brand development. 
-        We combine creativity with data-driven insights to deliver results that matter.
-      </>
-    ),
+    description: null,
   },
   work: {
-    display: true,
+    display: false,
     title: "Our Services",
-    experiences: [
-      {
-        company: "Brand Development",
-        timeframe: "Core Service",
-        role: "Identity & Strategy",
-        achievements: [
-          <>
-            Comprehensive brand strategy development including visual identity, voice, and positioning
-          </>,
-          <>
-            Creation of brand guidelines and assets that ensure consistency across all platforms
-          </>,
-        ],
-        images: [
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Brand Development",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Digital Marketing",
-        timeframe: "Core Service",
-        role: "Growth & Engagement",
-        achievements: [
-          <>
-            Strategic social media management and content marketing campaigns
-          </>,
-          <>
-            Data-driven SEO optimization and performance marketing
-          </>,
-        ],
-        images: [],
-      },
-    ],
+    experiences: [],
   },
   studies: {
     display: false,
+    title: "Studies",
+    institutions: [],
   },
   technical: {
-    display: true,
+    display: false,
     title: "Our Expertise",
-    skills: [
-      {
-        title: "Brand Strategy",
-        description: <>Comprehensive brand development and positioning strategies that connect with your target audience.</>,
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Brand Strategy",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Digital Marketing",
-        description: <>Results-driven digital marketing campaigns that drive engagement and conversions.</>,
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Digital Marketing",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-    ],
+    skills: [],
   },
 };
 
