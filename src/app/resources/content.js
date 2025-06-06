@@ -9,8 +9,8 @@ const person = {
   role: "Creative Marketing Agency",
   avatar: "/images/avatar.jpg",
   email: "hello@nolastudios.com",
-  location: "America/New_York",
-  languages: ["English"], 
+  location: "Philippines/Bacolod",
+  languages: ["English", "Filipino"], 
 };
 
 const newsletter = {
