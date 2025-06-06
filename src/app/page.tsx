@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./page.module.scss";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Grid } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
@@ -38,48 +38,81 @@ export default function Home() {
       <Column fillWidth horizontal="center" vertical="center" gap="32" className={styles.responsiveContainer}>
         <Column fillWidth horizontal="center" gap="32" maxWidth="xl">
           <Column fillWidth gap="32" horizontal="center">
-            <Column fillWidth gap="32" horizontal="center">
-              <Badge background="brand-alpha-weak" paddingX="32" paddingY="8" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}>
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
-              <RevealFx delay={0.2}>
-                <Text variant="display-strong-xl" align="center" className={styles.responsiveHeadline}>
-                  {home.headline}
-                </Text>
-              </RevealFx>
-              <RevealFx delay={0.3}>
-                <Text variant="heading-default-xl" align="center" onBackground="neutral-weak" className={styles.responsiveSubtext}>
-                  {home.subline}
-                </Text>
-              </RevealFx>
-              <Flex gap="16" marginTop="16">
-                <Button
-                  id="works"
-                  data-border="square"
-                  href="/work"
-                  variant="secondary"
-                  className="brand-background-weak brand-border-medium neutral-on-background-strong"
-                  size="l"
-                  style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
-                  arrowIcon
-                >
-                  Our Works
-                </Button>
-                <Button
-                  id="contact"
-                  data-border="square"
-                  href="/about"
-                  variant="secondary"
-                  className="brand-background-weak brand-border-medium neutral-on-background-strong"
-                  size="l"
-                  style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
-                  arrowIcon
-                >
-                  Contact Us
-                </Button>
-              </Flex>
-            </Column>
+            <Badge background="brand-alpha-weak" paddingX="32" paddingY="8" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}>
+              <Row paddingY="2">{home.featured.title}</Row>
+            </Badge>
+            <RevealFx delay={0.2}>
+              <Text variant="display-strong-xl" align="center" className={styles.responsiveHeadline}>
+                {home.headline}
+              </Text>
+            </RevealFx>
+            <RevealFx delay={0.3}>
+              <Text variant="heading-default-xl" align="center" onBackground="neutral-weak" className={styles.responsiveSubtext}>
+                {home.subline}
+              </Text>
+            </RevealFx>
+            <Flex gap="16" marginTop="16">
+              <Button
+                id="works"
+                data-border="square"
+                href="/work"
+                variant="secondary"
+                className="brand-background-weak brand-border-medium neutral-on-background-strong"
+                size="l"
+                style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
+                arrowIcon
+              >
+                Our Works
+              </Button>
+              <Button
+                id="contact"
+                data-border="square"
+                href="/about"
+                variant="secondary"
+                className="brand-background-weak brand-border-medium neutral-on-background-strong"
+                size="l"
+                style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
+                arrowIcon
+              >
+                Contact Us
+              </Button>
+            </Flex>
           </Column>
+        </Column>
+        
+        <RevealFx delay={0.4}>
+          <svg 
+            className={styles.glowingArrow}
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4L12 20M12 20L18 14M12 20L6 14"
+              stroke="var(--brand-background-strong)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </RevealFx>
+
+        <Column fillWidth horizontal="center" gap="48" maxWidth="xl" marginTop="32">
+          <Text variant="body-strong-xl" align="center" onBackground="neutral-weak">
+            Trusted by Brands Around the World
+          </Text>
+          <Grid className={styles.brandsGrid}>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Johnson & Johnson</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Datadog</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Stripe</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Samsung</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Instacart</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Perplexity</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Ramp</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Shopify</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">US Foods</Text>
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">Mercado Libre</Text>
+          </Grid>
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
