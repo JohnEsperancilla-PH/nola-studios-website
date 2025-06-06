@@ -7,23 +7,34 @@
 .nav {
   padding-left: var(--static-space-20);
   padding-right: var(--static-space-16);
+  position: relative;
+  z-index: 1000;
 }
 
 .menu {
   padding: var(--static-space-20);
+  position: absolute;
+  top: 120%;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
-/* Hide desktop nav on mobile */
+/* Mobile-first approach */
 .desktopNav {
-  display: none;
+  display: none !important;
 }
 
-/* Show mobile nav on mobile */
 .mobileNav {
-  display: flex;
+  display: flex !important;
 }
 
-@media (min-width: 768px) {
+.menu {
+  display: block;
+}
+
+/* Tablet and above */
+@media screen and (min-width: 768px) {
   .container {
     max-width: 95%;
   }
@@ -37,23 +48,21 @@
     padding: var(--static-space-12);
   }
 
-  /* Show desktop nav on desktop */
   .desktopNav {
-    display: flex;
+    display: flex !important;
   }
 
-  /* Hide mobile nav on desktop */
   .mobileNav {
-    display: none;
+    display: none !important;
   }
 
-  /* Hide mobile menu on desktop */
   .menu {
-    display: none;
+    display: none !important;
   }
-} 
+}
 
-@media (min-width: 900px) {
+/* Desktop */
+@media screen and (min-width: 900px) {
   .container {
     max-width: 90%;
   }
@@ -67,18 +76,15 @@
     padding: var(--static-space-12);
   }
 
-  /* Show desktop nav on desktop */
   .desktopNav {
-    display: flex;
+    display: flex !important;
   }
 
-  /* Hide mobile nav on desktop */
   .mobileNav {
-    display: none;
+    display: none !important;
   }
 
-  /* Hide mobile menu on desktop */
   .menu {
-    display: none;
+    display: none !important;
   }
 } 

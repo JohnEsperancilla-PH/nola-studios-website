@@ -1,7 +1,7 @@
 "use client";
 
 import { NavIcon, Flex, Column } from "@/once-ui/components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Logo } from "./Logo";
 import { ToggleButton } from "./ToggleButton";
 import Link from "next/link";
@@ -12,6 +12,26 @@ export function Navigation() {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsActive(false);
+  }, [pathname]);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const nav = document.getElementById('main-nav');
+      if (isActive && nav && !nav.contains(event.target as Node)) {
+        setIsActive(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isActive]);
+
   const handleClick = () => {
     setIsActive(!isActive);
   };
@@ -30,6 +50,7 @@ export function Navigation() {
         className={styles.container}
       >
         <Flex 
+          id="main-nav"
           className={styles.nav}
           paddingY="8" 
           background="surface"
@@ -62,7 +83,7 @@ export function Navigation() {
           <NavIcon 
             className={styles.mobileNav}
             isActive={isActive} 
-            onClick={handleClick} 
+            onClick={handleClick}
             aria-label="Toggle navigation menu"
             aria-expanded={isActive}
             aria-controls="nav-menu"
@@ -88,6 +109,7 @@ export function Navigation() {
                   size="l"
                   aria-selected={pathname === item.href}
                   style={{ justifyContent: 'flex-start' }}
+                  onClick={() => setIsActive(false)}
                 >
                   {item.label}
                 </ToggleButton>
