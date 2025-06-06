@@ -21,14 +21,29 @@ export function Navigation() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const nav = document.getElementById('main-nav');
-      if (isActive && nav && !nav.contains(event.target as Node)) {
+      const menu = document.getElementById('nav-menu');
+      if (isActive && nav && menu && !nav.contains(event.target as Node) && !menu.contains(event.target as Node)) {
         setIsActive(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
+    if (isActive) {
+      document.addEventListener('click', handleClickOutside);
+    }
     return () => {
       document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isActive]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
     };
   }, [isActive]);
 
@@ -95,10 +110,9 @@ export function Navigation() {
           <Column 
             id="nav-menu"
             className={styles.menu}
-            background="surface" 
+            background="surface"
             border="surface"
             radius="l" 
-            marginTop="8"
             fillWidth
             gap="8"
           >
