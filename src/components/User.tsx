@@ -16,7 +16,6 @@ export function User({ name, subline, avatarProps }: UserProps) {
       <Avatar
         size="xl"
         src={avatarProps.src}
-        alt={avatarProps.alt || name}
         style={{ width: '80px', height: '80px' }}
       />
       <Column gap="4">
