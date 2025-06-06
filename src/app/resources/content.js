@@ -57,7 +57,7 @@ const home = {
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Building Your Brand from Vision to Viral</>,
   featured: {
-    display: true,
+    display: false,
     title: <>NOLA Studios</>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },

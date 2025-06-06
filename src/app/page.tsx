@@ -38,9 +38,6 @@ export default function Home() {
       <Column fillWidth horizontal="center" vertical="center" gap="32" className={styles.responsiveContainer}>
         <Column fillWidth horizontal="center" gap="32" maxWidth="xl">
           <Column fillWidth gap="32" horizontal="center">
-            <Badge background="brand-alpha-weak" paddingX="32" paddingY="8" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
             <RevealFx delay={0.2}>
               <Text variant="display-strong-xl" align="center" className={styles.responsiveHeadline}>
                 {home.headline}

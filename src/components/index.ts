@@ -4,3 +4,6 @@ export { Mailchimp } from "@/components/Mailchimp";
 export { ProjectCard } from "@/components/ProjectCard";
 export { HeadingLink } from "@/components/HeadingLink";
 export { RouteGuard } from "@/components/RouteGuard";
+export { Logo } from './Logo';
+export { ToggleButton } from './ToggleButton';
+export { Navigation } from './Navigation';
