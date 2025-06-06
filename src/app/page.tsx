@@ -4,6 +4,8 @@ import styles from "./page.module.scss";
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Grid } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 import { OgCard } from "@/components/OgCard";
+import { User } from "@/components/User";
+import { AutoScroll } from "@/components/AutoScroll";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
@@ -167,6 +169,80 @@ export default function Home() {
                 shadow="l"
               />
             </div>
+          </Column>
+        </RevealFx>
+
+        <RevealFx delay={0.3}>
+          <Column fillWidth horizontal="center" gap="48" maxWidth="xl" marginTop="xl">
+            <Text variant="display-strong-s" align="center">
+              What Our Clients Say
+            </Text>
+            <AutoScroll speed="slow">
+              <OgCard 
+                ogData={{
+                  title: "",
+                  description: "",
+                  image: "",
+                }}
+                direction="column"
+                shadow="l"
+                style={{ width: '320px', minWidth: '320px' }}
+              >
+                <User
+                  name="BOYA Audio"
+                  subline="NOLA Studios transformed our brand identity with their creative expertise. Their attention to detail and innovative approach exceeded our expectations."
+                  avatarProps={{ src: "/images/brands/boya.png" }}
+                />
+              </OgCard>
+              <OgCard 
+                ogData={{
+                  title: "",
+                  description: "",
+                  image: "",
+                }}
+                direction="column"
+                shadow="l"
+                style={{ width: '320px', minWidth: '320px' }}
+              >
+                <User
+                  name="FOINE Essence"
+                  subline="Their digital marketing strategies helped us reach new audiences and achieve remarkable growth. A true partner in our success story."
+                  avatarProps={{ src: "/images/brands/foine.png" }}
+                />
+              </OgCard>
+              <OgCard 
+                ogData={{
+                  title: "",
+                  description: "",
+                  image: "",
+                }}
+                direction="column"
+                shadow="l"
+                style={{ width: '320px', minWidth: '320px' }}
+              >
+                <User
+                  name="ELNARIS"
+                  subline="The creative team at NOLA Studios brought our vision to life with stunning visuals and impeccable design work."
+                  avatarProps={{ src: "/images/brands/elnaris.png" }}
+                />
+              </OgCard>
+              <OgCard 
+                ogData={{
+                  title: "",
+                  description: "",
+                  image: "",
+                }}
+                direction="column"
+                shadow="l"
+                style={{ width: '320px', minWidth: '320px' }}
+              >
+                <User
+                  name="WALLEX"
+                  subline="Professional, innovative, and results-driven. NOLA Studios has been instrumental in elevating our brand presence."
+                  avatarProps={{ src: "/images/brands/wallex.png" }}
+                />
+              </OgCard>
+            </AutoScroll>
           </Column>
         </RevealFx>
       </Column>

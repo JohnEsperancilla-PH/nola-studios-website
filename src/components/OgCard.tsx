@@ -11,9 +11,11 @@ interface OgCardProps {
   };
   direction?: "row" | "column";
   shadow?: "s" | "m" | "l";
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
-export function OgCard({ ogData, direction = "column", shadow }: OgCardProps) {
+export function OgCard({ ogData, direction = "column", shadow, children, style }: OgCardProps) {
   return (
     <Card
       href={ogData.url}
@@ -22,23 +24,28 @@ export function OgCard({ ogData, direction = "column", shadow }: OgCardProps) {
       gap="16"
       radius="l"
       className={styles.card}
+      style={style}
     >
-      <SmartImage
-        src={ogData.image}
-        alt={ogData.title}
-        aspectRatio="16/9"
-        radius="m"
-        sizes="(max-width: 768px) 100vw, 400px"
-        priority
-      />
-      <Column gap="8">
-        <Text variant="heading-strong-m" style={{ color: '#fff' }}>
-          {ogData.title}
-        </Text>
-        <Text variant="body-default-s" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-          {ogData.description}
-        </Text>
-      </Column>
+      {ogData.image && (
+        <SmartImage
+          src={ogData.image}
+          alt={ogData.title}
+          aspectRatio="16/9"
+          radius="m"
+          sizes="(max-width: 768px) 100vw, 400px"
+          priority
+        />
+      )}
+      {children || (
+        <Column gap="8">
+          <Text variant="heading-strong-m" style={{ color: '#fff' }}>
+            {ogData.title}
+          </Text>
+          <Text variant="body-default-s" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+            {ogData.description}
+          </Text>
+        </Column>
+      )}
     </Card>
   );
 } 
