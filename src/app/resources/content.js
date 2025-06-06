@@ -55,16 +55,19 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building Your Brand from Vision to Viral</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
+    title: <>NOLA Studios</>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon={false} style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      At NOLA Studios, we blend eye-catching content with real-world results to craft marketing magic.
+      From visual campaigns to strategic growth, we turn ideas into impact backed by trends, not guesswork.
+      <br />
+      <br />
+      <strong>Let's build your brand together.</strong>
     </>
   ),
 };

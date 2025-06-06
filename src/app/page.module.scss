@@ -1,0 +1,37 @@
+.responsiveContainer {
+  padding-top: 100px;
+
+  @media (min-width: 640px) {
+    padding-top: 96px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 70px;
+  }
+}
+
+.responsiveHeadline {
+  font-size: 62px !important;
+  line-height: 1.1 !important;
+
+  @media (min-width: 640px) {
+    font-size: 72px !important;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 100px !important;
+  }
+}
+
+.responsiveSubtext {
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+
+  @media (min-width: 640px) {
+    font-size: 20px !important;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 22px !important;
+  }
+} 

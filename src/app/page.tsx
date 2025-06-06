@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./page.module.scss";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
@@ -34,47 +35,51 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth paddingY="24" gap="m">
-        <Column maxWidth="s">
-          {home.featured && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
-          )}
-          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
-            </Text>
-          </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              arrowIcon
-            >
-              <Flex gap="8" vertical="center">
-                {about.avatar.display && (
-                  <Avatar
-                    style={{ marginLeft: "-0.75rem", marginRight: "0.25rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
+      <Column fillWidth horizontal="center" vertical="center" gap="32" className={styles.responsiveContainer}>
+        <Column fillWidth horizontal="center" gap="32" maxWidth="xl">
+          <Column fillWidth gap="32" horizontal="center">
+            <Column fillWidth gap="32" horizontal="center">
+              <Badge background="brand-alpha-weak" paddingX="32" paddingY="8" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}>
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+              <RevealFx delay={0.2}>
+                <Text variant="display-strong-xl" align="center" className={styles.responsiveHeadline}>
+                  {home.headline}
+                </Text>
+              </RevealFx>
+              <RevealFx delay={0.3}>
+                <Text variant="heading-default-xl" align="center" onBackground="neutral-weak" className={styles.responsiveSubtext}>
+                  {home.subline}
+                </Text>
+              </RevealFx>
+              <Flex gap="16" marginTop="16">
+                <Button
+                  id="works"
+                  data-border="square"
+                  href="/work"
+                  variant="secondary"
+                  className="brand-background-weak brand-border-medium neutral-on-background-strong"
+                  size="l"
+                  style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
+                  arrowIcon
+                >
+                  Our Works
+                </Button>
+                <Button
+                  id="contact"
+                  data-border="square"
+                  href="/about"
+                  variant="secondary"
+                  className="brand-background-weak brand-border-medium neutral-on-background-strong"
+                  size="l"
+                  style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
+                  arrowIcon
+                >
+                  Contact Us
+                </Button>
               </Flex>
-            </Button>
-          </RevealFx>
+            </Column>
+          </Column>
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
