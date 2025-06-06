@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Grid } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
+import { OgCard } from "@/components/OgCard";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
@@ -48,32 +49,48 @@ export default function Home() {
                 {home.subline}
               </Text>
             </RevealFx>
-            <Flex gap="16" marginTop="16">
-              <Button
-                id="works"
-                data-border="square"
-                href="/work"
-                variant="secondary"
-                className="brand-background-weak brand-border-medium neutral-on-background-strong"
-                size="l"
-                style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
-                arrowIcon
-              >
-                Our Works
-              </Button>
-              <Button
-                id="contact"
-                data-border="square"
-                href="/about"
-                variant="secondary"
-                className="brand-background-weak brand-border-medium neutral-on-background-strong"
-                size="l"
-                style={{ padding: "16px 32px", height: "auto", minHeight: "56px" }}
-                arrowIcon
-              >
-                Contact Us
-              </Button>
-            </Flex>
+            <RevealFx delay={0.3}>
+              <Flex gap="16" marginTop="16">
+                <Button 
+                  id="works"
+                  data-border="square"
+                  href="/work"
+                  variant="secondary"
+                  className="neutral-background-strong neutral-border-strong neutral-on-background-strong"
+                  size="l"
+                  style={{ 
+                    padding: "16px 32px", 
+                    height: "auto", 
+                    minHeight: "56px",
+                    backgroundColor: "rgb(22, 22, 22)",
+                    borderColor: "rgba(255, 255, 255, 0.1)",
+                    color: "#fff"
+                  }}
+                  arrowIcon
+                >
+                  Our Works
+                </Button>
+                <Button
+                  id="contact"
+                  data-border="square"
+                  href="/about"
+                  variant="secondary"
+                  className="neutral-background-strong neutral-border-strong neutral-on-background-strong"
+                  size="l"
+                  style={{ 
+                    padding: "16px 32px", 
+                    height: "auto", 
+                    minHeight: "56px",
+                    backgroundColor: "rgb(22, 22, 22)",
+                    borderColor: "rgba(255, 255, 255, 0.1)",
+                    color: "#fff"
+                  }}
+                  arrowIcon
+                >
+                  Contact Us
+                </Button>
+              </Flex>
+            </RevealFx>
           </Column>
         </Column>
         
@@ -93,24 +110,65 @@ export default function Home() {
             />
           </svg>
         </RevealFx>
+        <RevealFx>
+          <Column fillWidth horizontal="center" gap="48" maxWidth="xl" marginTop="32">
+            <Text variant="display-strong-s" align="center">
+              Trusted by Brands Around the World
+            </Text>
+            <Grid className={styles.brandsGrid}>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">7RYMS</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">BOYA Audio</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">FOINE Essence</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">ELNARIS Fragrance</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">GAMBRINO</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">LINKIT Asia</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">NOMADICO</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">PACETE Clinic</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">ROMOSS</Text>
+              <Text variant="body-default-m" align="center" onBackground="neutral-weak">WALLEX</Text>
+            </Grid>
+          </Column>
+        </RevealFx>
 
-        <Column fillWidth horizontal="center" gap="48" maxWidth="xl" marginTop="32">
-          <Text variant="body-strong-xl" align="center" onBackground="neutral-weak">
-            Trusted by Brands Around the World
-          </Text>
-          <Grid className={styles.brandsGrid}>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">7RYMS</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">BOYA Audio</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">FOINE Essence</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">ELNARIS Fragrance</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">GAMBRINO</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">LINKIT Asia</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">NOMADICO</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">PACETE Clinic</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">ROMOSS</Text>
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">WALLEX</Text>
-          </Grid>
-        </Column>
+        <RevealFx delay={0.2}>
+          <Column fillWidth horizontal="center" gap="48" maxWidth="xl" marginTop="64">
+            <Text variant="display-strong-s" align="center">
+              What We Do
+            </Text>
+            <div className={styles.servicesGrid}>
+              <OgCard 
+                ogData={{
+                  title: "Brand Identity",
+                  description: "We craft compelling brand narratives and visual identities that resonate with your target audience.",
+                  image: "/images/services/product-photography.png",
+                  url: "#"
+                }}
+                direction="column"
+                shadow="l"
+              />
+              <OgCard 
+                ogData={{
+                  title: "Digital Marketing",
+                  description: "Drive growth through data-driven digital marketing campaigns and social media strategies.",
+                  image: "/images/services/digital-marketing.png",
+                  url: "#"
+                }}
+                direction="column"
+                shadow="l"
+              />
+              <OgCard 
+                ogData={{
+                  title: "Creative Design",
+                  description: "Transform ideas into stunning visuals with our expert design and creative production services.",
+                  image: "/images/services/creative-design.png",
+                  url: "#"
+                }}
+                direction="column"
+                shadow="l"
+              />
+            </div>
+          </Column>
+        </RevealFx>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
