@@ -75,7 +75,7 @@ export default async function Project({
         }}
       />
       
-      <Column maxWidth="xs" gap="8">
+      <Column maxWidth="xs" gap="8" style={{ marginTop: '32px' }}>
         <Button 
           data-border="rounded" 
           href="/work" 
