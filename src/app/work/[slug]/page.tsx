@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
-import { AvatarGroup, Button, Column, Flex, Heading, SmartImage, Text } from "@/once-ui/components";
+import { AvatarGroup, Button, Column, Flex, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { about, person, work } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
 import { Metadata } from "next";
 import { Meta, Schema } from "@/once-ui/modules";
+import { WorkGallery } from "@/components/work/WorkGallery";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -56,7 +57,7 @@ export default async function Project({
     })) || [];
 
   return (
-    <Column as="section" maxWidth="m" horizontal="center" gap="l">
+    <Column as="section" maxWidth="m" horizontal="center" gap="m">
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -72,30 +73,35 @@ export default async function Project({
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column maxWidth="xs" gap="16">
-        <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
+      
+      <Column maxWidth="xs" gap="8">
+        <Button 
+          data-border="rounded" 
+          href="/work" 
+          variant="tertiary" 
+          weight="default" 
+          size="s" 
+          prefixIcon="chevronLeft"
+          style={{ marginBottom: '4px' }}
+        >
           Projects
         </Button>
-        <Heading variant="display-strong-s">{post.metadata.title}</Heading>
       </Column>
-      {post.metadata.images.length > 0 && (
-        <SmartImage
-          priority
-          aspectRatio="16 / 9"
-          radius="m"
-          alt="image"
-          src={post.metadata.images[0]}
-        />
+
+      <WorkGallery 
+        images={post.metadata.images} 
+        title={post.metadata.title}
+        summary={post.metadata.summary}
+        publishedAt={post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+      />
+
+      {post.metadata.team && (
+        <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+          <Flex gap="8" marginBottom="16" vertical="center">
+            <AvatarGroup reverse avatars={avatars} size="m" />
+          </Flex>
+        </Column>
       )}
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
-        <Flex gap="12" marginBottom="24" vertical="center">
-          {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
-          <Text variant="body-default-s" onBackground="neutral-weak">
-            {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-          </Text>
-        </Flex>
-        <CustomMDX source={post.content} />
-      </Column>
       <ScrollToHash />
     </Column>
   );

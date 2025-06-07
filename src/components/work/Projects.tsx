@@ -17,6 +17,12 @@ export function Projects({ range }: ProjectsProps) {
     ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
     : sortedProjects;
 
+  const getRandomImage = (images: string[]) => {
+    if (!images || images.length === 0) return "";
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
+
   return (
     <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
       {displayedProjects.map((post, index) => (
@@ -24,7 +30,7 @@ export function Projects({ range }: ProjectsProps) {
           priority={index < 2}
           key={post.slug}
           href={`work/${post.slug}`}
-          images={post.metadata.images}
+          images={[getRandomImage(post.metadata.images)]}
           title={post.metadata.title}
           description={post.metadata.summary}
           content={post.content}
