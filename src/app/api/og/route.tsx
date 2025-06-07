@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
 
     // Font loading
     const interBold = await fetch(
-      new URL('/public/fonts/Inter-Bold.ttf', import.meta.url)
+      new URL('../../../../public/fonts/Inter-Bold.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     // Define different layouts based on type
