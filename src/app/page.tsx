@@ -75,7 +75,7 @@ export default function Home() {
                 <Button
                   id="contact"
                   data-border="square"
-                  href="/about"
+                  href="/contact"
                   variant="secondary"
                   className="neutral-background-strong neutral-border-strong neutral-on-background-strong"
                   size="l"
