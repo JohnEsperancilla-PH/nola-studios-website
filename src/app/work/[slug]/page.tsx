@@ -93,6 +93,7 @@ export default async function Project({
         title={post.metadata.title}
         summary={post.metadata.summary}
         publishedAt={post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+        projectUrl={post.metadata.link}
       />
 
       {post.metadata.team && (

@@ -1,0 +1,22 @@
+.imageLink {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.titleLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--brand-solid-strong);
+  }
+}
