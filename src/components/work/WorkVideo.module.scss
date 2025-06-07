@@ -1,0 +1,21 @@
+.header {
+  padding: var(--static-space-16) 0;
+}
+
+.summary {
+  max-width: 720px;
+  margin: var(--static-space-16) auto 0;
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  
+  iframe {
+    aspect-ratio: 16/9;
+    height: auto !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+} 

@@ -9,6 +9,7 @@ import ScrollToHash from "@/components/ScrollToHash";
 import { Metadata } from "next";
 import { Meta, Schema } from "@/once-ui/modules";
 import { WorkGallery } from "@/components/work/WorkGallery";
+import { WorkVideo } from "@/components/work/WorkVideo";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -88,12 +89,21 @@ export default async function Project({
         </Button>
       </Column>
 
-      <WorkGallery 
-        images={post.metadata.images} 
-        title={post.metadata.title}
-        summary={post.metadata.summary}
-        publishedAt={post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-      />
+      {post.metadata.videoUrl ? (
+        <WorkVideo 
+          videoUrl={post.metadata.videoUrl}
+          title={post.metadata.title}
+          summary={post.metadata.summary}
+          publishedAt={post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+        />
+      ) : (
+        <WorkGallery 
+          images={post.metadata.images} 
+          title={post.metadata.title}
+          summary={post.metadata.summary}
+          publishedAt={post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+        />
+      )}
 
       {post.metadata.team && (
         <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
@@ -102,7 +112,12 @@ export default async function Project({
           </Flex>
         </Column>
       )}
-      <ScrollToHash />
+
+      {post.content && (
+        <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+          <CustomMDX source={post.content} />
+        </Column>
+      )}
     </Column>
   );
 }
