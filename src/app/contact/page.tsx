@@ -2,6 +2,20 @@
 
 import { Button, Column, Text, Input, Textarea, Row, Flex } from "@/once-ui/components";
 import { FormEvent, useState } from "react";
+import { Metadata } from "next";
+import { Meta } from "@/once-ui/modules";
+import { baseURL } from "@/app/resources";
+
+// Create a metadata object for the contact page
+export async function generateMetadata(): Promise<Metadata> {
+  return Meta.generate({
+    title: "Contact Us - NOLA Studios",
+    description: "Get in touch with NOLA Studios. Let's discuss your next project and bring your vision to life.",
+    baseURL: baseURL,
+    path: "/contact",
+    image: `${baseURL}/api/og?title=${encodeURIComponent("Contact Us - NOLA Studios")}&type=contact`,
+  });
+}
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
