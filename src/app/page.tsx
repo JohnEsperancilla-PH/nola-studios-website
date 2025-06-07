@@ -191,7 +191,7 @@ export default function Home() {
                 <User
                   name="BOYA Audio"
                   subline="NOLA Studios transformed our brand identity with their creative expertise. Their attention to detail and innovative approach exceeded our expectations."
-                  avatarProps={{ src: "/images/brands/boya.png" }}
+                  avatarProps={{ src: "/images/brands/BOYA.svg" }}
                 />
               </OgCard>
               <OgCard 
@@ -207,7 +207,7 @@ export default function Home() {
                 <User
                   name="FOINE Essence"
                   subline="Their digital marketing strategies helped us reach new audiences and achieve remarkable growth. A true partner in our success story."
-                  avatarProps={{ src: "/images/brands/foine.png" }}
+                  avatarProps={{ src: "/images/brands/FOINE.svg" }}
                 />
               </OgCard>
               <OgCard 
@@ -221,9 +221,9 @@ export default function Home() {
                 style={{ width: '320px', minWidth: '320px' }}
               >
                 <User
-                  name="ELNARIS"
+                  name="ROMOSS"
                   subline="The creative team at NOLA Studios brought our vision to life with stunning visuals and impeccable design work."
-                  avatarProps={{ src: "/images/brands/elnaris.png" }}
+                  avatarProps={{ src: "/images/brands/ROMOSS.svg" }}
                 />
               </OgCard>
               <OgCard 
@@ -239,7 +239,7 @@ export default function Home() {
                 <User
                   name="WALLEX"
                   subline="Professional, innovative, and results-driven. NOLA Studios has been instrumental in elevating our brand presence."
-                  avatarProps={{ src: "/images/brands/wallex.png" }}
+                  avatarProps={{ src: "/images/brands/WALLEX.svg" }}
                 />
               </OgCard>
             </AutoScroll>
